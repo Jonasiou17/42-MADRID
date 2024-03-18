@@ -6,12 +6,13 @@
 /*   By: cdorado- <cdorado-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 19:40:18 by cdorado-          #+#    #+#             */
-/*   Updated: 2024/03/16 19:40:18 by cdorado-         ###   ########.fr       */
+/*   Updated: 2024/03/18 19:33:56 by cdorado-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
+#include <stddef.h>
 
 void    *ft_memset(void *dest, int c, size_t count)
 {
