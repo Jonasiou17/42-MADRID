@@ -6,7 +6,7 @@
 /*   By: cdorado- <cdorado-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:18:59 by cdorado-          #+#    #+#             */
-/*   Updated: 2024/03/20 19:18:59 by cdorado-         ###   ########.fr       */
+/*   Updated: 2024/03/22 20:02:27 by cdorado-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,33 +16,50 @@
 
 void    *ft_memmove(void *dest, const void *src, size_t count)
 {
-    size_t  i;
-    char    *cdest;
-    char    *csrc;
+    size_t      i;
+    char        *cdest;
+    const char  *csrc;
 
     i = 0;
     cdest = dest;
     csrc = src;
-    while(i < count)
+    if (cdest == csrc)
+        return (dest);
+    if (csrc < cdest && cdest < csrc + count)
     {
-        cdest[i] = csrc[i];
-        i++;
+        i = count;
+        while (i > 0)
+        {
+            cdest[i - 1] = csrc[i - 1];
+            i--;
+        }
+    }
+    else
+    {
+        while(i < count)
+        {
+          cdest[i] = csrc[i];
+            i++;
+        }
     }
     return(cdest);
 }
-
-int main( void )
+/*
+int main(void)
 {
-    #define SIZE    21
- 
-    char target[SIZE] = "a shiny white sphere";
-    char *p = target + 8;  /* p points at the starting character
-                          of the word we want to replace */
-     char *source = target + 2; /* start of "shiny" */
- 
-     printf( "Before memmove, target is \"%s\"\n", target );
-     memmove( p, source, 5 );
-     printf( "After memmove, target becomes \"%s\"\n", target );
+    #define MAX_LEN 80
 
-  return (0);
-}
+    char source[ MAX_LEN ] = "a shiny white sphere";
+
+    printf("\nBefore ft_memcpy, target is \"%s\"\n", source );
+    ft_memmove(source + 8, source + 2, sizeof(char) * 6);
+    printf("After ft_memcpy, target becomes \"%s\"\n\n", source );
+
+    char source1[ MAX_LEN ] = "a shiny white sphere";
+
+    printf("Before memcpy, target is \"%s\"\n", source1 );
+    memmove(source1 + 8, source1 + 2, sizeof(char) * 6);
+    printf("After memcpy, target becomes \"%s\"\n\n", source1 );
+
+    return (0);
+}*/

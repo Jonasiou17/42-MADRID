@@ -6,7 +6,7 @@
 /*   By: cdorado- <cdorado-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 19:40:18 by cdorado-          #+#    #+#             */
-/*   Updated: 2024/03/18 19:33:56 by cdorado-         ###   ########.fr       */
+/*   Updated: 2024/03/22 20:04:01 by cdorado-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void    *ft_memset(void *dest, int c, size_t count)
     dest1 = dest;
     while(count > 0)
     {
-        dest1[count] = c;  // Si le pones en el prototipo de la función en vez de void unc har si funciona
+        dest1[count] = c;  // Si le pones en el prototipo de la función en vez de void unchar si funciona
         count--;
     }
     return (dest);
