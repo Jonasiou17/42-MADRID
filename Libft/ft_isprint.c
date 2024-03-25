@@ -6,21 +6,22 @@
 /*   By: cdorado- <cdorado-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 18:05:48 by cdorado-          #+#    #+#             */
-/*   Updated: 2024/03/15 19:00:15 by cdorado-         ###   ########.fr       */
+/*   Updated: 2024/03/25 19:19:16 by cdorado-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <ctype.h>
+#include "libft.h"
 
-int	ft_isascii(char c)
+int	ft_isprint(char c)
 {
 	int check;
 
 	check = 1;
 	if ((c < 32 || c > 127) && (c < 9 || c > 13) && c != ' ')
 		check = 0;
-	
+
 	return (check);
 }
 /*

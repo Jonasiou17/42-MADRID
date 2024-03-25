@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdorado- <cdorado-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/15 17:45:57 by cdorado-          #+#    #+#             */
-/*   Updated: 2024/03/25 19:19:22 by cdorado-         ###   ########.fr       */
+/*   Created: 2024/03/25 17:53:32 by cdorado-          #+#    #+#             */
+/*   Updated: 2024/03/25 19:21:45 by cdorado-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <ctype.h>
+#include <stddef.h>
+#include <string.h>
 #include "libft.h"
 
-int	ft_isalnum(char c)
+unsigned int	ft_strlcpy(unsigned char *dest, unsigned char *src, size_t count)
 {
-	int check;
+	int	i;
+	unsigned char	*cdest;
+	unsigned char	*csrc;
 
-		check = 1;
-		if ((c < 'A' || c > 'Z') && (c < 'a' || c > 'z') && (c < 48 || c > 57))
-			check = 0;
-	
-		return (check);
+	i = 0;
+	cdest = dest;
+	csrc = src;
+
+	return (count);
 }
-/*
-int main(){
-	char prueba = 'o';
-
-	printf("El valor de retorno de ft_isalnum es %d", ft_isalnum(prueba));
-	printf("\n\nEl valor de retorno de isalnum es %d", isalnum(prueba));
-	return (0);
-}*/

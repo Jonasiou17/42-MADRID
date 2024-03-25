@@ -6,12 +6,13 @@
 /*   By: cdorado- <cdorado-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 17:31:47 by cdorado-          #+#    #+#             */
-/*   Updated: 2024/03/15 17:44:09 by cdorado-         ###   ########.fr       */
+/*   Updated: 2024/03/25 19:19:18 by cdorado-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <ctype.h>
+#include "libft.h"
 
 int	ft_isdigit(char c)
 {
@@ -20,7 +21,7 @@ int	ft_isdigit(char c)
 	check = 1;
 	if (c < 48 || c > 57)
 		check = 0;
-        
+		
 	return (check);
 }
 /*

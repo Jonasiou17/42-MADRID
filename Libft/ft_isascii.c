@@ -6,12 +6,13 @@
 /*   By: cdorado- <cdorado-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 17:51:34 by cdorado-          #+#    #+#             */
-/*   Updated: 2024/03/15 18:05:06 by cdorado-         ###   ########.fr       */
+/*   Updated: 2024/03/25 19:19:19 by cdorado-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <ctype.h>
+#include "libft.h"
 
 int	ft_isascii(char c)
 {

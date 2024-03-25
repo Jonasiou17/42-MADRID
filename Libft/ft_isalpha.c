@@ -6,12 +6,13 @@
 /*   By: cdorado- <cdorado-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 19:33:48 by cdorado-          #+#    #+#             */
-/*   Updated: 2024/03/13 20:10:56 by cdorado-         ###   ########.fr       */
+/*   Updated: 2024/03/25 19:19:21 by cdorado-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <ctype.h>
+#include "libft.h"
 
 int	ft_isalpha(char c)
 {
