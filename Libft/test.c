@@ -14,7 +14,7 @@
 
 int main(){
 
-	char a = 9;
+	char a = 0;
 
 	printf("El valor que retorna la función es %d",  ft_isdigit(a));
 	return (0);
