@@ -14,14 +14,13 @@
 #include <ctype.h>
 #include "libft.h"
 
-int	ft_isascii(char c)
+int	ft_isascii(unsigned char c)
 {
-	int check;
+	int	check;
 
 	check = 1;
-	if (c < 0 || c > 127)
+	if (c > 127)
 		check = 0;
-	
 	return (check);
 }
 /*
@@ -30,7 +29,8 @@ int main(){
 
 	printf("\nEl valor que retorna ft_isascii es %d\n\n", ft_isascii(prueba));
 	printf("El valor que retorna isascii es %d\n", isascii(prueba));
-    printf("El valor de la variable es %d y su representación es %c\n", prueba, prueba);
+    printf("El valor de la variable es %d y su representación es %c\n"
+	, prueba, prueba);
 
 	return (0);
 }*/

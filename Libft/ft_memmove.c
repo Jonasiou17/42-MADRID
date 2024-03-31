@@ -37,13 +37,13 @@ void	*ft_memmove(void *dest, const void *src, size_t count)
 	}
 	else
 	{
-		while(i < count)
+		while (i < count)
 		{
 			cdest[i] = csrc[i];
 			i++;
 		}
 	}
-	return(cdest);
+	return (cdest);
 }
 /*
 int main(void)

@@ -14,14 +14,13 @@
 #include <ctype.h>
 #include "libft.h"
 
-int	ft_isprint(char c)
+int	ft_isprint(unsigned char c)
 {
-	int check;
+	int	check;
 
 	check = 1;
-	if ((c < 32 || c > 127) && (c < 9 || c > 13) && c != ' ')
+	if ((c < 32 || c > 126)) //&& (c < 9 || c > 13) && c != ' ')
 		check = 0;
-
 	return (check);
 }
 /*

@@ -16,13 +16,12 @@
 
 int	ft_isalnum(char c)
 {
-	int check;
+	int	check;
 
-		check = 1;
-		if ((c < 'A' || c > 'Z') && (c < 'a' || c > 'z') && (c < 48 || c > 57))
-			check = 0;
-	
-		return (check);
+	check = 1;
+	if ((c < 'A' || c > 'Z') && (c < 'a' || c > 'z') && (c < 48 || c > 57))
+		check = 0;
+	return (check);
 }
 /*
 int main(){

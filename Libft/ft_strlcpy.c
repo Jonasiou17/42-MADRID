@@ -14,16 +14,16 @@
 #include <stddef.h>
 #include <string.h>
 #include "libft.h"
-
-unsigned int	ft_strlcpy(unsigned char *dest, unsigned char *src, size_t count)
+/*
+unsigned int	ft_strlcpy(unsigned char *dest, unsigned char *src,
+					size_t count)
 {
-	int	i;
+	int				i;
 	unsigned char	*cdest;
 	unsigned char	*csrc;
 
 	i = 0;
 	cdest = dest;
 	csrc = src;
-
 	return (count);
-}
+}*/

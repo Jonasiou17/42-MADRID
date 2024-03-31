@@ -16,12 +16,11 @@
 
 int	ft_isalpha(char c)
 {
-	int check;
+	int	check;
 
 	check = 1;
 	if ((c < 'A' || c > 'Z') && (c < 'a' || c > 'z'))
 		check = 0;
-	
 	return (check);
 }
 /*

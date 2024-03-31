@@ -21,7 +21,6 @@ int	ft_isdigit(char c)
 	check = 1;
 	if (c < 48 || c > 57)
 		check = 0;
-		
 	return (check);
 }
 /*

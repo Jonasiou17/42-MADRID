@@ -17,12 +17,12 @@
 
 void	*ft_memset(void *dest, int c, size_t count)
 {
-	unsigned char *dest1;
+	unsigned char	*dest1;
 
 	dest1 = dest;
-	while(count > 0)
+	while (count > 0)
 	{
-		dest1[count] = c;  // Si le pones en el prototipo de la función en vez de void unchar si funciona
+		dest1[count] = c;
 		count--;
 	}
 	return (dest);
