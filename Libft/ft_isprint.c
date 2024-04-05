@@ -19,7 +19,7 @@ int	ft_isprint(unsigned char c)
 	int	check;
 
 	check = 1;
-	if ((c < 32 || c > 126)) //&& (c < 9 || c > 13) && c != ' ')
+	if ((c < 32 || c > 126))
 		check = 0;
 	return (check);
 }

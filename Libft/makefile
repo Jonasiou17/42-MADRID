@@ -13,37 +13,45 @@
 NAME		:= libft.a
 
 #------------------------------------------------#
-#   INGREDIENTS                                  #
+#                   VARIABLES                    #
 #------------------------------------------------#
-# SRCS      source files
-# OBJS      object files
-#
-# CC        compiler
-# CFLAGS    compiler flags
-# CPPFLAGS  preprocessor flags
 
-SRCS        := ft_bzero.c ft_isalpha.c ft_isdigit.c ft_memcpy.c  ft_memset.c  ft_strlen.c\
-ft_isalnum.c ft_isascii.c ft_isprint.c ft_memmove.c ft_strlcpy.c
+SRCS        :=	ft_bzero.c   \
+				ft_isalpha.c \
+				ft_isdigit.c \
+				ft_memcpy.c  \
+				ft_memset.c  \
+				ft_strlen.c  \
+				ft_isalnum.c \
+				ft_isascii.c \
+				ft_isprint.c \
+				ft_memmove.c \
+				ft_strlcpy.c \
+				ft_strlcat.c \
+				ft_toupper.c \
+				ft_tolower.c \
+				ft_strchr.c
+
 OBJS        := $(SRCS:%.c=%.o)
-INCLUDE		:= libft.h
+INCLUDE		:= libft.h # Útil para referirnos a los .h cuando están en otro directorio
 
 CC          := cc
 CFLAGS      := -Wall -Wextra -Werror
-CPPFLAGS	:= -I.
+CPPFLAGS	:= -I. # --> Para incluir otros directorios. De momento no incluimos nada 
+# aquí porque todos los archivos están en la misma ruta.
 AR			:= ar
 ARFLAGS		:= -r -c -s
 
 #------------------------------------------------#
-#   UTENSILS                                     #
+#                   COMMANDS                     #
 #------------------------------------------------#
-# RM        force remove
-# MAKEFLAGS make flags
+
 
 RM          := rm -f
 MAKEFLAGS   += --no-print-directory
 
 #------------------------------------------------#
-#   RECIPES                                      #
+#                  EXTRA RULES                   #
 #------------------------------------------------#
 # all       default goal
 # $(NAME)   linking .o -> binary
@@ -73,7 +81,7 @@ re:
 	$(MAKE) all
 
 #------------------------------------------------#
-#   SPEC                                         #
+#                SPECIAL TARGETS                 #
 #------------------------------------------------#
 
 .PHONY: clean fclean re

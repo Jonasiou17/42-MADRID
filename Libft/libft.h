@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stddef.h>
 # include <string.h>
+# include <ctype.h>
 
 void			ft_bzero(void *s, size_t n);
 int				ft_isalnum(char c);
@@ -26,8 +27,13 @@ int				ft_isprint(unsigned char c);
 void			*ft_memcpy(void *dest, const void *src, size_t count);
 void			*ft_memmove(void *dest, const void *src, size_t count);
 void			*ft_memset(void *dest, int c, size_t count);
-unsigned int	ft_strlcpy(unsigned char *dest, unsigned char *src,
+size_t			ft_strlcpy(char *dest,char *src,
 					size_t count);
-int				ft_strlen(char *str);
+size_t			ft_strlcat(char *dest, char *src,
+					size_t count);
+size_t			ft_strlen(const char *str);
+unsigned char	ft_toupper(unsigned char c);
+unsigned char	ft_tolower(unsigned char c);
+char			*ft_strchr(const char *string, int c);
 
 #endif

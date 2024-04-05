@@ -13,9 +13,18 @@
 #include "libft.h"
 
 int main(){
+	char buffer [21] = "Hola, ";
+	char buffer1 [] = "que tal";
+	char buffer2 [21] = "Hola, ";
+	size_t aux;
+	char *aux1;
 
-	char a = 0;
+	aux = ft_strlcat(buffer, buffer1, 8);
+	printf("\nBuffer ahora con strlcat contiene %s\n", buffer);
+	printf("El valor de strlcat es %ld\n", aux);
 
-	printf("El valor que retorna la función es %d",  ft_isdigit(a));
+	aux1 = strcat(buffer2, buffer1);
+	printf("\nBuffer ahora con strcat contiene %s\n", aux1);
+
 	return (0);
 }

@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "ctype.h": "c"
+        "ctype.h": "c",
+        "string": "c",
+        "libft.h": "c"
     }
 }

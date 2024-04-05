@@ -14,16 +14,37 @@
 #include <stddef.h>
 #include <string.h>
 #include "libft.h"
-/*
-unsigned int	ft_strlcpy(unsigned char *dest, unsigned char *src,
+
+size_t	ft_strlcpy(char *dest, char *src,
 					size_t count)
 {
-	int				i;
-	unsigned char	*cdest;
-	unsigned char	*csrc;
+	size_t	j;
 
-	i = 0;
-	cdest = dest;
-	csrc = src;
-	return (count);
+	j = 0;
+	while (j < count)
+	{
+		src[j] = dest[j];
+		j++;
+	}
+	if (ft_strlen(dest) <= ft_strlen(src))
+		return (ft_strlen(src));
+	else
+		return (ft_strlen(dest));
+}
+/*
+int main(){
+	char buffer [21] = "Hola, ";
+	char buffer1 [21] = "que tal";
+	char buffer2 [21] = "Hola, ";
+	size_t aux;
+	char	*aux1;
+
+	aux = ft_strlcpy(buffer, buffer1, 3);
+	printf("\nBuffer ahora con strlcpy contiene %s\n", buffer);
+	printf("El valor de strlcpy es %ld\n", aux);
+
+	aux1 = strcpy(buffer2, buffer1);
+	printf("\nBuffer ahora con strcpy contiene %s\n", buffer2);
+
+	return (0);
 }*/
