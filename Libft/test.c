@@ -11,20 +11,22 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <bsd/string.h>
 
-int main(){
-	char buffer [21] = "Hola, ";
-	char buffer1 [] = "que tal";
-	char buffer2 [21] = "Hola, ";
-	size_t aux;
-	char *aux1;
+int main()
+{
+  char buffer1[40] = "computer program";
+  char  *ptr;
+  char	*ptr1;
+  int    ch = '\t';
+ 
+  ptr = ft_strrchr( buffer1, ch );
+  printf( "The last occurrence of %c in '%s' is '%s'\n",
+            ch, buffer1, ptr );
 
-	aux = ft_strlcat(buffer, buffer1, 8);
-	printf("\nBuffer ahora con strlcat contiene %s\n", buffer);
-	printf("El valor de strlcat es %ld\n", aux);
-
-	aux1 = strcat(buffer2, buffer1);
-	printf("\nBuffer ahora con strcat contiene %s\n", aux1);
-
+  ptr1 = strrchr( buffer1, ch );
+  printf( "The last occurrence of %c in '%s' is '%s'\n",
+            ch, buffer1, ptr1 );
 	return (0);
 }
+

@@ -10,10 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stddef.h>
-#include <string.h>
 #include "libft.h"
+//#include <bsd/string.h>
 
 size_t	ft_strlcat(char *dest, char *src,
 					size_t count)
@@ -23,31 +21,37 @@ size_t	ft_strlcat(char *dest, char *src,
 
 	j = 0;
 	dest_len = ft_strlen(dest);
-	while (count - dest_len > 0)
+	if (count > dest_len)
 	{
-		dest[dest_len] = src[j];
-		dest_len++;
-		j++;
+		while (count - dest_len - 1 > 0 && src[j] != '\0')
+		{
+			dest[dest_len] = src[j];
+			dest_len++;
+			j++;
+		}
+		dest[dest_len] = '\0';
+		return (ft_strlen(src) + ft_strlen(dest) - j);
 	}
-	dest[dest_len] = '\0';
-	return (ft_strlen(src) + ft_strlen(dest) - j);
+	if (src[0] == '\0' || count <= dest_len)
+		return (count + ft_strlen(src));
+	if (count == 0)
+		return (ft_strlen(src));
+	return (ft_strlen(dest) + ft_strlen(src));
 }
 /*
 int main(){
-	int main(){
-	char buffer [21] = "Hola, ";
-	char buffer1 [] = "que tal";
-	char buffer2 [21] = "Hola, ";
+	char buffer [40] = "lorem ipsum dolor sit amet";
+	char buffer1 [] = "a";
+	char buffer2 [40] = "lorem ipsum dolor sit amet";
 	size_t aux;
-	char *aux1;
+	size_t aux1;
 
-	aux = ft_strlcat(buffer, buffer1, 8);
-	printf("\nBuffer ahora con strlcat contiene %s\n", buffer);
-	printf("El valor de strlcat es %ld\n", aux);
+	aux = ft_strlcat(buffer, buffer1, 1);
+	printf("\nBuffer ahora con ft_strlcat contiene %s\n", buffer);
+	printf("El valor de ft_strlcat es %ld\n", aux);
 
-	aux1 = strcat(buffer2, buffer1);
-	printf("\nBuffer ahora con strcat contiene %s\n", aux1);
-
+	aux1 = strlcat(buffer2, buffer1, 1);
+	printf("\nBuffer ahora con strlcat contiene %s\n", buffer2);
+	printf("El valor de strlcat es %ld\n", aux1);
 	return (0);
 }*/
-
