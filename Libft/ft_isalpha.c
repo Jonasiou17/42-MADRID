@@ -10,8 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+/* 	Checks  for  an alphabetic character; in the standard "C" locale, 
+	it is equivalent to (isupper(c) || islower(c)).  In some locales, 
+	there may be additional characters for which isalpha()  is  true—let‐ters 
+	which are neither uppercase nor lowercase.
+	
+	Return value --> The values returned are nonzero if the 
+					character c falls into the tested class, 
+					and zero if not.*/
+
 #include "libft.h"
 
 int	ft_isalpha(int c)
