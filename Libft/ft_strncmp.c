@@ -12,16 +12,16 @@
 
 #include <libft.h>
 
-int	strncmp(const char *str1, const char *str2, size_t num)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	str1 = "Hola";
-	num = 10;
-	str2 = "adios";
+	s1 = "Hola";
+	n = 10;
+	s2 = "adios";
 
-	str1 = str2;
-	str2 = str1;
+	s1 = s2;
+	s2 = s1;
 
-	num += 10;
+	n += 10;
 
-	return (num);
+	return (n);
 }

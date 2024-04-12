@@ -13,30 +13,30 @@
 #include "libft.h"
 //#include <bsd/string.h>
 
-size_t	ft_strlcat(char *dest, char *src,
-					size_t count)
+size_t	ft_strlcat(char *dst, const char *src,
+					size_t size)
 {
 	size_t	j;
-	size_t	dest_len;
+	size_t	dst_len;
 
 	j = 0;
-	dest_len = ft_strlen(dest);
-	if (count > dest_len)
+	dst_len = ft_strlen(dst);
+	if (size > dst_len)
 	{
-		while (count - dest_len - 1 > 0 && src[j] != '\0')
+		while (size - dst_len - 1 > 0 && src[j] != '\0')
 		{
-			dest[dest_len] = src[j];
-			dest_len++;
+			dst[dst_len] = src[j];
+			dst_len++;
 			j++;
 		}
-		dest[dest_len] = '\0';
-		return (ft_strlen(src) + ft_strlen(dest) - j);
+		dst[dst_len] = '\0';
+		return (ft_strlen(src) + ft_strlen(dst) - j);
 	}
-	if (src[0] == '\0' || count <= dest_len)
-		return (count + ft_strlen(src));
-	if (count == 0)
+	if (src[0] == '\0' || size <= dst_len)
+		return (size + ft_strlen(src));
+	if (size == 0)
 		return (ft_strlen(src));
-	return (ft_strlen(dest) + ft_strlen(src));
+	return (ft_strlen(dst) + ft_strlen(src));
 }
 /*
 int main(){

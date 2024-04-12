@@ -15,19 +15,19 @@
 #include <stddef.h>
 #include "libft.h"
 
-void	*ft_memset(void *dest, int c, size_t count)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char	*dest1;
+	unsigned char	*s1;
 	size_t			i;
 
 	i = 0;
-	dest1 = dest;
-	while (i < count)
+	s1 = s;
+	while (i < n)
 	{
-		dest1[i] = c;
+		s1[i] = c;
 		i++;
 	}
-	return (dest1);
+	return (s1);
 }
 /*
 int main(){

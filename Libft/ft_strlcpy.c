@@ -13,29 +13,29 @@
 #include "libft.h"
 //#include <bsd/string.h>
 
-size_t	ft_strlcpy(char *dest, char *src,
-					size_t count)
+size_t	ft_strlcpy(char *dst, char *src,
+					size_t size)
 {
 	size_t	j;
 
 	j = 0;
-	if (count == 0)
+	if (size == 0)
 		return (ft_strlen(src));
-	if (count > 9223372036854775807)
+	if (size > 9223372036854775807)
 	{
-		count *= -1;
-		if (count < ft_strlen(src))
-			count = ft_strlen(src) + 1;
+		size *= -1;
+		if (size < ft_strlen(src))
+			size = ft_strlen(src) + 1;
 	}
-	while (j < count - 1)
+	while (j < size - 1)
 	{
-		dest[j] = src[j];
+		dst[j] = src[j];
 		j++;
 	}
-	dest[j] = '\0';
-	if (ft_strlen(dest) <= ft_strlen(src))
+	dst[j] = '\0';
+	if (ft_strlen(dst) <= ft_strlen(src))
 		return (ft_strlen(src));
-	return (ft_strlen(dest));
+	return (ft_strlen(dst));
 }
 /*
 int main(){

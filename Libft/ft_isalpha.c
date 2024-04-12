@@ -14,7 +14,7 @@
 #include <ctype.h>
 #include "libft.h"
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
 	int	check;
 

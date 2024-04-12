@@ -14,7 +14,7 @@
 #include <ctype.h>
 #include "libft.h"
 
-int	ft_isalnum(char c)
+int	ft_isalnum(int c)
 {
 	int	check;
 
