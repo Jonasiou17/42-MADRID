@@ -24,7 +24,7 @@ int	ft_isascii(int c)
 	int	check;
 
 	check = 1;
-	if (c > 127)
+	if (c > 127 || c < 0)
 		check = 0;
 	return (check);
 }

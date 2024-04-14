@@ -27,11 +27,23 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	i = 0;
 	str = s;
+	if (c > 256)
+		c %= 256;
 	while (i < n)
 	{
-		if (str[i] == c)
-			return ((unsigned char *)&str[i]);
+		if (str[i] == (unsigned char)c)
+			return ((void *)&str[i]);
 		i++;
 	}
 	return (NULL);
 }
+/*
+int main(){
+	int str[7] = {-49, 49, 1, -1, 0, -2, 2};
+	int c = -2;
+	int n = 7;
+
+	printf("La direcion de memoria antes es %p\n", str);
+	printf("\nla funcion ft_memchr retorna %p\n", ft_memchr(str, c, n));
+	printf("\nla funcion memchr retorna %p\n", memchr(str, c, n));
+}*/

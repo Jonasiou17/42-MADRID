@@ -28,23 +28,29 @@ char	*ft_strchr(const char *s, int c)
 
 	i = 0;
 	len = ft_strlen(s);
+	if (c > 256)
+		c %= 256;
 	while (i <= len)
 	{
 		if (s[i] == c)
 			return ((char *)&s[i]);
 		i++;
 	}
+	if (c < 0)
+		return ((char *)s);
 	return (NULL);
 }
 /*
 int main(void)
 {
-  char buffer1[40] = "computer program";
-  char * ptr;
-  int    ch = 'p';
- 
-  ptr = ft_strchr( buffer1, ch );
-  printf( "The first occurrence of %c in '%s' is '%s'\n",
+  	char buffer1[40] = "teste";
+ 	char *ptr;
+  	int   ch = 'e';
+	
+	printf("La dirección de memoria del array es %p\n", buffer1);
+ 	ptr = ft_strchr( buffer1, ch );
+ 	printf( "The first occurrence of %c in '%s' is '%s'\n",
             ch, buffer1, ptr );
+	printf("La direccion de memoria devuelta tras buscar es %p\n", ptr);
  
 }*/

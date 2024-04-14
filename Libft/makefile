@@ -34,7 +34,7 @@ SRCS        :=	ft_bzero.c   \
 				ft_strrchr.c \
 				ft_strncmp.c \
 				ft_memchr.c  \
-				ft_memcmp.c 
+				ft_memcmp.c
 
 OBJS        := $(SRCS:%.c=%.o)
 INCLUDE		:= libft.h # Útil para referirnos a los .h cuando están en otro directorio

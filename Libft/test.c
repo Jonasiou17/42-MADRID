@@ -15,18 +15,14 @@
 
 int main()
 {
-  char buffer1[40] = "computer program";
-  char  *ptr;
-  char	*ptr1;
-  int    ch = '\t';
- 
-  ptr = ft_strrchr( buffer1, ch );
-  printf( "The last occurrence of %c in '%s' is '%s'\n",
-            ch, buffer1, ptr );
+	int str[7] = {-49, 49, 1, -1, 0, -2, 2};
+	int c = 1135;
+	int n = 7;
 
-  ptr1 = strrchr( buffer1, ch );
-  printf( "The last occurrence of %c in '%s' is '%s'\n",
-            ch, buffer1, ptr1 );
-	return (0);
+	printf("El valor de char c es %c\n", c);
+	printf("La direcion de memoria antes es %p\n", str);
+	printf("\nla funcion ft_memchr retorna %p\n", ft_memchr(str, c, n));
+	printf("\nla funcion memchr retorna %p\n", memchr(str, c, n));
+
 }
 

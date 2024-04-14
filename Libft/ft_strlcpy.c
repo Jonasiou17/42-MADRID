@@ -63,9 +63,9 @@ size_t	ft_strlcpy(char *dst, char *src,
 		if (size < ft_strlen(src))
 			size = ft_strlen(src) + 1;
 	}
-	while (j < size - 1)
+	while (j < size - 1 && src[j] != '\0')
 	{
-		dst[j] = src[j];
+		dst[j] = (unsigned char)src[j];
 		j++;
 	}
 	dst[j] = '\0';
@@ -75,19 +75,27 @@ size_t	ft_strlcpy(char *dst, char *src,
 }
 /*
 int main(){
-	char buffer [40] = "Hola, ";
-	char buffer1 [40] = "que tal";
-	char buffer2 [40] = "Hola, ";
+	char buffer[16];
+	char buffer2[16];
 	size_t 	aux;
 	size_t	aux1;
 
-	aux = ft_strlcpy(buffer, buffer1, -1);
-	printf("\nBuffer ahora con ft_strlcpy contiene %s\n", buffer);
+	memset(buffer, 0, 15);
+	memset(buffer2, 0, 15);
+	memset(buffer, 'r', 6);
+	memset(buffer2, 'r', 6);
+
+	printf("\nBuffer antes con ft_strlcpy contiene %s\n", buffer);
+	aux = ft_strlcpy(buffer, "", 15);
+	printf("\nBuffer ahora con ft_strlcpy contiene %s\n", buffer + 1);
 	printf("El valor de ft_strlcpy es %ld\n", aux);
 
-	aux1 = strlcpy(buffer2, buffer1, -1);
-	printf("\nBuffer2 ahora con strlcpy contiene %s\n", buffer2);
+	printf("\nBuffer antes con strlcpy contiene %s\n", buffer2);
+	aux1 = strlcpy(buffer2, "", 15);
+	printf("\nBuffer2 ahora con strlcpy contiene %s\n", buffer2 + 1);
 	printf("El valor de strlcpy es %ld\n", aux1);
+
+	return (0);
 
 	return (0);
 }*/

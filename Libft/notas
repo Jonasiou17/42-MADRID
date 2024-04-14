@@ -1,1 +1,1 @@
-cc test.c -L/mnt/c/Users/chris/OneDrive/Escritorio/42/Libft -l:libft.a
+cc test.c -lbsd -L/mnt/c/Users/chris/OneDrive/Escritorio/42/Libft -l:libft.a
