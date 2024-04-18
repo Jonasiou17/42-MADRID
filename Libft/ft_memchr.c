@@ -27,8 +27,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	i = 0;
 	str = s;
-	if (c > 256)
-		c %= 256;
 	while (i < n)
 	{
 		if (str[i] == (unsigned char)c)

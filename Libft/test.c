@@ -15,14 +15,11 @@
 
 int main()
 {
-	int str[7] = {-49, 49, 1, -1, 0, -2, 2};
-	int c = 1135;
-	int n = 7;
+	char	*numero = "    -+54";
 
-	printf("El valor de char c es %c\n", c);
-	printf("La direcion de memoria antes es %p\n", str);
-	printf("\nla funcion ft_memchr retorna %p\n", ft_memchr(str, c, n));
-	printf("\nla funcion memchr retorna %p\n", memchr(str, c, n));
+	printf("El valor que retorna ft_atoi es: %d\n", ft_atoi(numero));
+	printf("El valor que retorna atoi es: %d\n", atoi(numero));
 
+	return (0);
 }
 

@@ -28,11 +28,9 @@ char	*ft_strchr(const char *s, int c)
 
 	i = 0;
 	len = ft_strlen(s);
-	if (c > 256)
-		c %= 256;
 	while (i <= len)
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 			return ((char *)&s[i]);
 		i++;
 	}
