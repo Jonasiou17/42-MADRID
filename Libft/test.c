@@ -13,13 +13,16 @@
 #include "libft.h"
 #include <bsd/string.h>
 
-int main()
+int main(void)
 {
-	char	*numero = "    -+54";
+	char	prueba[] = "lorem ipsum dolor sit amet";
+	char	*copia;
+	char	*copia1;
 
-	printf("El valor que retorna ft_atoi es: %d\n", ft_atoi(numero));
-	printf("El valor que retorna atoi es: %d\n", atoi(numero));
+	copia = ft_strdup(prueba);
+	printf("El string copiado contiene: %s\n", copia);
 
-	return (0);
+	copia1 = strdup(prueba);
+	printf("El string copiado contiene: %s\n", copia1);
 }
 

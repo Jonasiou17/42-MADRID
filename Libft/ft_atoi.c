@@ -24,14 +24,14 @@
 int	ft_atoi(const char *nptr)
 {
 	size_t	i;
-	int signo;
-	int resultado;  // Si el valor es superior a 9223372036854775808 no da igual
+	int		signo;
+	int		resultado;
 
 	i = 0;
 	resultado = 0;
 	signo = 1;
-	while (nptr[i] == ' ' || nptr[i] == '\n' || nptr[i] == '\t' ||
-	nptr[i] == '\v' || nptr[i] == '\r' || nptr[i] == '\f')
+	while (nptr[i] == ' ' || nptr[i] == '\n' || nptr[i] == '\t'
+		|| nptr[i] == '\v' || nptr[i] == '\r' || nptr[i] == '\f')
 		i++;
 	if (nptr[i] == '-')
 	{

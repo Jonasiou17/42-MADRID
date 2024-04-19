@@ -33,8 +33,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	little_len = ft_strlen(little);
-	/*if (len > 9223372036854775807)
-		len *= -1;*/
 	if (little[i] == '\0')
 		return ((char *)big);
 	while (big[i] != '\0' && i < len)
@@ -56,8 +54,10 @@ int main(){
 	char	seek[40] = "q\0";
 	size_t	len = 10;
 
-	printf("\nEl valor que retorna ft_strnstr es: %s\n", ft_strnstr(seeked, seek, len));
-	printf("El valor que retorna strnstr es: %s\n\n", strnstr(seeked, seek, len));
+	printf("\nEl valor que retorna ft_strnstr es: %s\n", 
+	ft_strnstr(seeked, seek, len));
+	printf("El valor que retorna strnstr es: %s\n\n", 
+	strnstr(seeked, seek, len));
 
 	return (0);
 }*/

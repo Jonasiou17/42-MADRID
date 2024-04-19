@@ -20,6 +20,15 @@
 
 #include "libft.h"
 
+void	bucle(char *cdest, const char *csrc, size_t n)
+{
+	while (n > 0)
+	{
+		cdest[n - 1] = csrc[n - 1];
+		n--;
+	}
+}
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t		i;
@@ -33,12 +42,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (dest);
 	if (csrc < cdest && cdest < csrc + n)
 	{
-		i = n;
-		while (i > 0)
-		{
-			cdest[i - 1] = csrc[i - 1];
-			i--;
-		}
+		bucle(cdest, csrc, n);
 	}
 	else
 	{
