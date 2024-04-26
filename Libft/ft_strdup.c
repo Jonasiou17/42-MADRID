@@ -32,14 +32,14 @@ char	*ft_strdup(const char *s)
 /*
 int main (){
 
-	char	prueba[] = "Hola amigo mio";
+	char	prueba[] = "lorem ipsum dolor sit amet";
 	char	*copia;
 	char	*copia1;
 
 	copia = ft_strdup(prueba);
-	printf("El string copiado contiene: %s", copia);
+	printf("El string copiado contiene: %s\n", copia);
 
 	copia1 = strdup(prueba);
-	printf("El string copiado contiene: %s", copia1);
+	printf("El string copiado contiene: %s\n", copia1);
 
 }*/

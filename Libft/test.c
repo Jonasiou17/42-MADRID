@@ -15,14 +15,15 @@
 
 int main(void)
 {
-	char	prueba[] = "lorem ipsum dolor sit amet";
-	char	*copia;
-	char	*copia1;
+	char	*prueba = "Hola que tal amigo mio a";
+	char	**returned;
+	int		i = 4;
 
-	copia = ft_strdup(prueba);
-	printf("El string copiado contiene: %s\n", copia);
-
-	copia1 = strdup(prueba);
-	printf("El string copiado contiene: %s\n", copia1);
+	returned = ft_split(prueba, 'a');
+	while (i > 0)
+	{
+		printf("El primer string es: %s\n", returned[i]);
+		i--;
+	}
+	return (0);
 }
-
