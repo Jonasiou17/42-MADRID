@@ -11,19 +11,16 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <bsd/string.h>
+//#include <bsd/string.h>
 
 int main(void)
 {
-	char	*prueba = "Hola que tal amigo mio a";
-	char	**returned;
-	int		i = 4;
+	char	str1[] = "teste";
+	char	str2[] = "teste";
+	int	n = 6;
 
-	returned = ft_split(prueba, 'a');
-	while (i > 0)
-	{
-		printf("El primer string es: %s\n", returned[i]);
-		i--;
-	}
+	printf("\nla funcion ft_memcmp retorna %d\n", ft_memcmp(str1, str2, n));
+	printf("\nla funcion memcmp retorna %d\n", memcmp(str1, str2, n));
+
 	return (0);
 }

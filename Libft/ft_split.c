@@ -41,29 +41,33 @@ char	**ft_split(char const *s, char c)
 	int		number_of_characters;
 	int		i;
 	int		k;
+	int		j;
+	int		s_len;
 
 	i = 0;
 	k = 0;
+	s_len = ft_strlen(s);
 	split = (char **) malloc(sizeof(char *) * (count((char *)s, c) + 1));
-	if(!split)
+	if(!s)
 		return (NULL);
-	while (s[i] != '\0')
+	while (s[i] != '\0' && i <= s_len)
 	{
 		number_of_characters = 0;
-		while (s[i++] != c)
+		while (s[i] != c && i++ <= s_len)
 			number_of_characters++;
-		number_of_characters++;
-		printf("Ha contado %d palabras\n", number_of_characters);
-		split[k] = (char *) malloc(sizeof(char) * (number_of_characters));
-		split[k][number_of_characters] = '\0';
+		j = i;
+		//printf("Ha contado %d palabras e i = %d\n", number_of_characters, i);
+		split[k] = (char *) malloc(sizeof(char) * (number_of_characters) + 1);
+		split[k][number_of_characters + 1] = '\0';
 		while(number_of_characters > 0)
 		{
-			split[k][number_of_characters - 1] = s[number_of_characters - 1];
+			split[k][number_of_characters - 1] = s[j - 1];
 			number_of_characters--;
+			j--;
 		}
-		printf("%s\n", split[k]);
+		//printf("%s\n", split[k]);
 		k++;
-		i = i + 2;
+		i++;
 	}
 	split[k] = NULL;
 	return (split);
