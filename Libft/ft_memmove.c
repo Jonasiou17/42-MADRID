@@ -20,7 +20,7 @@
 
 #include "libft.h"
 
-void	bucle(char *cdest, const char *csrc, size_t n)
+static void	bucle(char *cdest, const char *csrc, size_t n)
 {
 	while (n > 0)
 	{

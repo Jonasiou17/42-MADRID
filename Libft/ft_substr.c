@@ -29,7 +29,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	s_len = ft_strlen(s);
 	if (len > s_len - start + 1)
-		len = s_len - start + 1;
+		len = s_len - start;
 	if (start > s_len)
 		len = 0;
 	substr = malloc(sizeof(char) * (len + 1));
@@ -41,18 +41,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (substr);
 	}
 	while (len--)
-	{
-		substr[i] = s[start];
-		i++;
-		start++;
-	}
+		substr[i++] = s[start++];
 	substr[i] = '\0';
 	return (substr);
 }
 /*
 int main (){
 	char	prueba[] = "lorem ipsum dolor sit amet";
-	printf("El sub string resultante es: %s\n\n", ft_substr("hola", 0, ULONG_MAX));
+	printf("El sub string resultante es: %s\n\n", 
+	ft_substr("hola", 0, ULONG_MAX));
 	printf("El valor máximo de un size_t es %lu\n", ULONG_MAX);
 	return (0);
 }*/

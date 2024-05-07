@@ -18,17 +18,7 @@
 
 #include "libft.h"
 
-int	check(char const *set, char	c)
-{
-	int	i;
-
-	i = 0;
-	while (set[i++] == c)
-		return (1);
-	return (0);
-}
-
-char	*ft_strtrim(char const *s1, char const *set)	
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	s1_len;

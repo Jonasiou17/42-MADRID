@@ -33,7 +33,7 @@ int	ft_atoi(const char *nptr)
 	while (nptr[i] == ' ' || nptr[i] == '\n' || nptr[i] == '\t'
 		|| nptr[i] == '\v' || nptr[i] == '\r' || nptr[i] == '\f')
 		i++;
-	if (nptr[i] == '-')
+	if (nptr[i] == '-' && nptr[i] != '\0')
 	{
 		signo = -1;
 		i++;

@@ -33,9 +33,12 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
+
 	if ((nmemb != 0) && nmemb * size < 9223372036854775807)
 	{
-		ptr = (void *)malloc(sizeof(size) * nmemb);
+		ptr = (void *)malloc(size * nmemb);
+		if (!ptr)
+			return (NULL);
 		ft_memset(ptr, 0, nmemb * size);
 		return (ptr);
 	}

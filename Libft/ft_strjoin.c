@@ -19,7 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	s1_len;
 	size_t	s2_len;
-	size_t		i;
+	size_t	i;
 	char	*strjoin;
 
 	i = 0;
@@ -30,7 +30,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	ft_memset(strjoin, 0, s1_len + s2_len + 1);
 	ft_memcpy(strjoin, s1, s1_len);
-	while(s2[i] != '\0')
+	while (s2[i] != '\0')
 	{
 		strjoin[s1_len + i] = (char)s2[i];
 		i++;

@@ -7,7 +7,7 @@
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 18:20:03 by cdorado-          #+#    #+#             */
 /*   Updated: 2024/04/24 18:20:03 by cdorado-         ###   ########.fr       */
-/*                                	                                            */
+/*                                	                                          */
 /* ************************************************************************** */
 
 /*	Reserva (utilizando malloc(3)) un array de strings resultante de separar 
@@ -20,68 +20,106 @@
 
 #include "libft.h"
 
-int	count(char *s, char c)
+static int	num_str(char *s, char c)
 {
-	int	contador;
+	int	num_str;
 	int	i;
 
-	contador = 0;
+	num_str = 0;
 	i = 0;
-	while (s[i++] != '\0')
+	if (!s)
+		return (0);
+	while (s[i] != '\0')
 	{
 		if (s[i] == c)
-			contador++;
+		{
+			num_str++;
+			while (s[i] == c)
+				i++;
+		}
+		else
+			i++;
 	}
-	return (contador);
+	num_str++;
+	return (num_str);
+}
+
+static void	*ft_free(char **memry, size_t aux)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < aux)
+	{
+		free(memry[i]);
+		i++;
+	}
+	free(memry);
+	return (NULL);
+}
+
+static void	split_str(char **ptr, char *str, char c, int nwords)
+{
+	int		i;
+	char	*aux;
+
+	i = 0;
+	if ((nwords > 0) && *str)
+	{
+		while (i < (nwords - 1))
+		{
+			aux = ft_strchr(str, c);
+			ptr[i++] = ft_substr(str, 0, aux - str);
+			if (ptr == 0)
+			{
+				ft_free(ptr, i);
+				return ;
+			}
+			while (*aux == c)
+				aux++;
+			str = aux;
+		}
+		ptr[i++] = ft_strdup(str);
+		ptr[i] = 0;
+	}
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**split;
-	int		number_of_characters;
-	int		i;
-	int		k;
-	int		j;
-	int		s_len;
+	int		nwords;
+	char	**ptr;
+	char	*str;
+	char	a[2];
 
-	i = 0;
-	k = 0;
-	s_len = ft_strlen(s);
-	split = (char **) malloc(sizeof(char *) * (count((char *)s, c) + 1));
-	if(!s)
-		return (NULL);
-	while (s[i] != '\0' && i <= s_len)
+	a[0] = c;
+	a[1] = '\0';
+	if (s)
 	{
-		number_of_characters = 0;
-		while (s[i] != c && i++ <= s_len)
-			number_of_characters++;
-		j = i;
-		//printf("Ha contado %d palabras e i = %d\n", number_of_characters, i);
-		split[k] = (char *) malloc(sizeof(char) * (number_of_characters) + 1);
-		split[k][number_of_characters + 1] = '\0';
-		while(number_of_characters > 0)
+		str = ft_strtrim(s, a);
+		if (str)
 		{
-			split[k][number_of_characters - 1] = s[j - 1];
-			number_of_characters--;
-			j--;
+			nwords = num_str(str, c);
+			ptr = ft_calloc((nwords + 1), sizeof(char *));
+			if (ptr)
+				split_str(ptr, str, c, nwords);
+			free(str);
+			return (ptr);
 		}
-		//printf("%s\n", split[k]);
-		k++;
-		i++;
 	}
-	split[k] = NULL;
-	return (split);
+	return (NULL);
 }
 /*
 int main()
 {
-	char	*prueba = "Hola que tal amigo mio a";
-	int		i = 4;
+	char	*prueba = "aa a a";
+	char	c = ' ';
+	char	**resultado = ft_split(prueba, c);
+	int		i = 0;
 
-	while (i > 0)
+	while (i < 3)
 	{
-		printf("El primer string es: %s\0", split(prueba, 'a'));
-		i--;
+		printf("El string contiene: %s\n", &resultado[i][0]);
+		i++;
 	}
-	return (0);
+}
 }*/
