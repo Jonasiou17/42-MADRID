@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef _LIBFT_H
+#define _LIBFT_H
 
-# include <stdio.h>
-# include <stddef.h>
-# include <string.h>
-# include <ctype.h>
-# include <stdlib.h>
-# include <limits.h>
-# include <unistd.h>
+#include <stdio.h>
+#include <stddef.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <limits.h>
+#include <unistd.h>
 
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);

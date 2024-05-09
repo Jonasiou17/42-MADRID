@@ -85,8 +85,8 @@ $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 	$(info CREATED $(NAME))
 
-%.o: %.c
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
+%.o: %.c $(INCLUDE)
+	$(CC) $(CFLAGS) -c $< -o $@
 	$(info CREATED $@)
 
 clean:

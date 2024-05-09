@@ -11,16 +11,19 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <bsd/string.h>
 
-int main(void)
+void	ft_putstr( unsigned int i, char *c)
 {
-	char	str1[] = "teste";
-	char	str2[] = "teste";
-	int	n = 6;
+	while (c[i])
+	{
+		write(1, &c[i], 1);
+		i++;
+	}
+}
 
-	printf("\nla funcion ft_memcmp retorna %d\n", ft_memcmp(str1, str2, n));
-	printf("\nla funcion memcmp retorna %d\n", memcmp(str1, str2, n));
-
-	return (0);
+int main()
+{
+	char *p = "Hello World!";
+	ft_striteri(p, &ft_putstr);
+	printf("%s", p);
 }
