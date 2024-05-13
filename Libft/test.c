@@ -12,18 +12,12 @@
 
 #include "libft.h"
 
-void	ft_putstr( unsigned int i, char *c)
-{
-	while (c[i])
-	{
-		write(1, &c[i], 1);
-		i++;
-	}
-}
+int main(){
+	int str[7] = {-49, 49, 1, -1, 0, -2, 2};
+	int c = -2;
+	int n = 7;
 
-int main()
-{
-	char *p = "Hello World!";
-	ft_striteri(p, &ft_putstr);
-	printf("%s", p);
+	printf("La direcion de memoria antes es %p\n", str);
+	printf("\nla funcion ft_memchr retorna %p\n", ft_memchr(str, c, n));
+	printf("\nla funcion memchr retorna %p\n", memchr(str, c, n));
 }
