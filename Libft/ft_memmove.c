@@ -41,9 +41,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if (cdest == csrc)
 		return (dest);
 	if (csrc < cdest && cdest < csrc + n)
-	{
 		bucle(cdest, csrc, n);
-	}
 	else
 	{
 		while (i < n)

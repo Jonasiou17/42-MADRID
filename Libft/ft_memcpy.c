@@ -32,7 +32,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		cdest[i] = csrc[i];
 		i++;
 	}
-	return (cdest);
+	return (dest);
 }
 /*
 int main(void)
