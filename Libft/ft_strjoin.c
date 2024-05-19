@@ -22,6 +22,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	char	*strjoin;
 
+	if (!s1 || !s2)
+		return (NULL);
 	i = 0;
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);

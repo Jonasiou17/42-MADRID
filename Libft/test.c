@@ -11,24 +11,25 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <bsd/string.h>
 
-int main(void)
-{
-	#define MAX_LEN 80
+int main(){
+	char *buffer = NULL;
+	char *buffer2 = NULL;
+	size_t 	aux;
+	size_t	aux1;
 
-	char source[MAX_LEN] = "hola maquina";
-	char target[MAX_LEN] = "Hola brouuuuuuuuuuuu";
+	/*printf("\nBuffer antes con ft_strlcpy contiene %s\n", buffer);
+	aux = ft_strlcpy(buffer, "", 92233720368547);
+	printf("\nBuffer ahora con ft_strlcpy contiene %s\n", buffer + 1);
+	printf("El valor de ft_strlcpy es %ld\n", aux);*/
 
-	printf("\nBefore ft_memcpy, target is \"%s\"\n", target );
-	ft_memcpy(target, source, sizeof(char) * 6);
-	printf("After ft_memcpy, target becomes \"%s\"\n\n", target );
+	printf("\nBuffer antes con strlcpy contiene %s\n", buffer2);
+	aux1 = strlcpy(buffer2, "", 92233720368547);
+	printf("\nBuffer2 ahora con strlcpy contiene %s\n", buffer2 + 1);
+	printf("El valor de strlcpy es %ld\n", aux1);
 
-	char source1[MAX_LEN] = "hola maquina";
-	char target1[MAX_LEN] = "Hola brouuuuuuuuuuuu";
-
-	printf("Before memcpy, target is \"%s\"\n", target1 );
-	memcpy(target1, source1, sizeof(char) * 6);
-	printf("After memcpy, target becomes \"%s\"\n\n", target1 );
+	return (0);
 
 	return (0);
 }

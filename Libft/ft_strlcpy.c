@@ -23,7 +23,7 @@
 	and dst must be NUL-terminated.
 	
 	The strlcpy() function copies up to size - 1 characters from the 
-	NUL-terminated string src to dst, NUL-termi‐nating the result.
+	NUL-terminated string src to dst, NUL-terminating the result.
 
     The strlcat() function appends the NUL-terminated string src to the 
 	end of dst.  It will append at most size- strlen(dst) - 1 bytes, 
@@ -57,12 +57,6 @@ size_t	ft_strlcpy(char *dst, char *src,
 	j = 0;
 	if (size == 0)
 		return (ft_strlen(src));
-	if (size > 9223372036854775807)
-	{
-		size *= -1;
-		if (size < ft_strlen(src))
-			size = ft_strlen(src) + 1;
-	}
 	while (j < size - 1 && src[j] != '\0')
 	{
 		dst[j] = (unsigned char)src[j];
