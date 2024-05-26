@@ -54,7 +54,7 @@ SRCS        :=	ft_bzero.c      \
 OBJS        := $(SRCS:%.c=%.o)
 INCLUDE		:= libft.h # Útil para referirnos a los .h cuando están en otro directorio
 
-CC          := cc
+CC          := gcc
 CFLAGS      := -Wall -Wextra -Werror
 CPPFLAGS	:= -I. # --> Para incluir otros directorios. De momento no incluimos nada 
 # aquí porque todos los archivos están en la misma ruta.

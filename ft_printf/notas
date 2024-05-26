@@ -1,0 +1,33 @@
+INTRODUCCIÓN
+
+Imprime un mensaje por pantalla utilizando una "cadena de formato", 
+que incluye las instrucciones para mezclar múltiples cadenas en la 
+cadena final a mostrar por pantalla.
+
+Es una función especial porque recibe un numero variáble de parámetros.
+
+- Primer parámetro --> Es fijo e incluye la cadena de formato (string) (texto a imprimir literalmente y marcas a reemplazar por texto que se obtiene de los parámetros adicionales) (a printf se la llama con tántos parámetros como marcas haya en la cadena de formato más uno, la propia cadena de formato).
+
+El símbolo "%" denota el comienzo de la marca de formato.
+
+No se comprueba que el número de marcas en la cadena de formato y el número de parámetros restantes sea consistente.
+
+ESTRUCTURA DE LAS MARCAS
+
+%[Parameter][flags][width][.precision][length]type
+Toda marca comienza con e símbolo % ya acaba con su tipo. (1) (Ver significado de cada campo)
+
+FUNCIONES VARIÁDICAS
+
+-va_start -->
+-va_arg -->
+-va_copy -->
+-va_end -->
+
+CSPDIUX%
+
+BIBLIOGRAFÍA
+
+(1) https://www.it.uc3m.es/pbasanta/asng/course_notes/input_output_printf_es.html
+(2) https://algoritmos9511.gitlab.io/_downloads/1957137bc70fc4a237497050cfc49c7f/los-secretos-de-printf.pdf
+
