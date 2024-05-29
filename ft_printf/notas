@@ -19,15 +19,29 @@ Toda marca comienza con e símbolo % ya acaba con su tipo. (1) (Ver significado 
 
 FUNCIONES VARIÁDICAS
 
--va_start -->
--va_arg -->
--va_copy -->
--va_end -->
+-va_list --> Tipo de dato que define un puntero a la lista de argumentos variable y se maneja a partir de los macros siguientes:
 
-CSPDIUX%
+-va_start --> Macro que inicializa un puntero va_list, usando para ello last (3, mirar bibliografía), que es el nombre del último argumento antes de la lista vriable, es decir, el único argumento cuyo tipo conoce la función.
+
+    ---------void va_start(va_list pa, last)------------
+
+-va_arg --> macro que devuelve el valor del siguiente argumento, apuntado por va_list y de tipo "tipo", que puede ser de cualquier tipo válido que pueda pasarse como argumento a una función. Esta manipula va_list haciendo que apunte al siguiente argumento de la lista.
+
+	----------tipo va_arg(va_list pa, tipo)--------------
+
+-va_copy -->
+
+-va_end --> Macro que maniula un retorno normal de la función cya lista de argumentos variable fue inicializada por va_start.
+
+	----------tipo va_end(va_list pa)--------------
 
 BIBLIOGRAFÍA
 
 (1) https://www.it.uc3m.es/pbasanta/asng/course_notes/input_output_printf_es.html
+
 (2) https://algoritmos9511.gitlab.io/_downloads/1957137bc70fc4a237497050cfc49c7f/los-secretos-de-printf.pdf
 
+(3) https://www.programacionenc.net/index.php?option=com_content&view=article&id=61:funciones-en-c-con-lista-de-argumentos-variable&catid=37:programacion-cc&Itemid=55
+
+
+swap_bits y print_bits
