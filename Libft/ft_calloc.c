@@ -6,7 +6,7 @@
 /*   By: cdorado- <cdorado-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 19:10:45 by cdorado-          #+#    #+#             */
-/*   Updated: 2024/04/26 18:58:52 by cdorado-         ###   ########.fr       */
+/*   Updated: 2024/06/02 11:54:51 by cdorado-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,15 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if ((nmemb != 0) && nmemb * size < 9223372036854775807)
-	{
 		ptr = (void *)malloc(size * nmemb);
 		if (!ptr)
 			return (NULL);
 		ft_memset(ptr, 0, nmemb * size);
 		return (ptr);
-	}
-	return (NULL);
 }
 /*
 int main(void)
-{º
+{
 	char	*ptr;
 
 	ptr = (char *)ft_calloc (15, 4);
