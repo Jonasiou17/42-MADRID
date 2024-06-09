@@ -11,45 +11,51 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_printf.h"
 
-int	ft_printf(char const *format, ...)
+static int	print_formats(va_list pa, const char format)
 {
-	va_list pa;
-	char	*ptr;
-	int		len;
+	int	len;
 
-	va_start(pa, format);
-	ptr = (char *)format;
-	len = ft_strlen(format);
-	while(*ptr != '\0')
-	{
-		if (*ptr != '%')
-		{
-			ft_putchar_fd(*ptr, 1);
-			ptr++;
-			continue;
-		}
-		switch (*++ptr)
-		{
-			case 'd':
-			ft_putnbr_fd(va_arg(pa, int), 1);
-			ptr++;
-			break;
-			case 's':
-			ft_putstr_fd(va_arg(pa, char *), 1);
-			ptr++;
-			break;
-		}
-	}
-	va_end(pa);
+	len = 0;
+	if (format == 'd')
+		len += print_integer(va_arg(pa, int));
+	else if (format == 's')
+		len += print_string(va_arg(pa, char *));
+	else if (format == 'p')
+		len += print_memory_address(va_arg(pa, void *));
+	else if (format == 'c')
+		len += print_character(va_arg(pa, int));
+	else if (format == 'i')
+		len += print_integer(va_arg(pa, int));
+	else if (format == 'u')
+		len += print_unsigned(va_arg(pa, unsigned int));
+	else if (format == 'x')
+		len += print_hex_lower(va_arg(pa, unsigned long long));
+	else if (format == 'X')
+		len += print_hex_upper(va_arg(pa, unsigned long long));
+	else if(format == '%')
+		len += print_percent();
 	return (len);
 }
 
-int main()
+int	ft_printf(char const *format, ...)
 {
-	int prueba = printf("Hola %s\n", "amigo");
-	printf("El valor de retorno de printf es %d\n", prueba);
-	int prueba1 = ft_printf("Hola %s\n", "amigo");
-	printf("El valor de ft_printf es %d\n", prueba1);
-	return (0);
+	va_list	pa;
+	int		i;
+	int		len;
+
+	i = 0;
+	len = 0;
+	va_start(pa, format);
+	while (format[i] != '\0')
+	{
+		if (format[i] != '%')
+			len += print_character(format[i]);
+		else
+			len += print_formats(pa, format[++i]);
+	i++;
+	}
+	va_end(pa);
+	return (len);
 }
