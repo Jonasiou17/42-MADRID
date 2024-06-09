@@ -16,48 +16,49 @@ NAME		:= libft.a
 #                   VARIABLES                    #
 #------------------------------------------------#
 
-SRCS        :=	ft_bzero.c      \
-				ft_isalpha.c    \
-				ft_isdigit.c    \
-				ft_memcpy.c     \
-				ft_memset.c     \
-				ft_strlen.c     \
-				ft_isalnum.c    \
-				ft_isascii.c    \
-				ft_isprint.c    \
-				ft_memmove.c    \
-				ft_strlcpy.c    \
-				ft_strlcat.c    \
-				ft_toupper.c    \
-				ft_tolower.c    \
-				ft_strchr.c     \
-				ft_strrchr.c    \
-				ft_strncmp.c    \
-				ft_memchr.c     \
-				ft_memcmp.c     \
-				ft_strnstr.c    \
-				ft_atoi.c       \
-				ft_calloc.c     \
-				ft_strdup.c     \
-				ft_substr.c     \
-				ft_strjoin.c    \
-				ft_strtrim.c    \
-				ft_split.c      \
-				ft_itoa.c       \
-				ft_strmapi.c    \
-				ft_putchar_fd.c \
-				ft_putstr_fd.c  \
-				ft_putendl_fd.c \
-				ft_putnbr_fd.c  \
-				ft_striteri.c
+SRC	        :=	ft_bzero      \
+				ft_isalpha    \
+				ft_isdigit    \
+				ft_memcpy     \
+				ft_memset     \
+				ft_strlen     \
+				ft_isalnum    \
+				ft_isascii    \
+				ft_isprint    \
+				ft_memmove    \
+				ft_strlcpy    \
+				ft_strlcat    \
+				ft_toupper    \
+				ft_tolower    \
+				ft_strchr     \
+				ft_strrchr    \
+				ft_strncmp    \
+				ft_memchr     \
+				ft_memcmp     \
+				ft_strnstr    \
+				ft_atoi       \
+				ft_calloc     \
+				ft_strdup     \
+				ft_substr     \
+				ft_strjoin    \
+				ft_strtrim    \
+				ft_split      \
+				ft_itoa       \
+				ft_strmapi    \
+				ft_putchar_fd \
+				ft_putstr_fd  \
+				ft_putendl_fd \
+				ft_putnbr_fd  \
+				ft_striteri
 
-OBJS        := $(SRCS:%.c=%.o)
-INCLUDE		:= libft.h # Útil para referirnos a los .h cuando están en otro directorio
+SRCS_DIR	:= 	src/
+OBJS_DIR	:= 	obj/
+
+INCLUDE		:= include
 
 CC          := gcc
-CFLAGS      := -Wall -Wextra -Werror
-CPPFLAGS	:= -I. # --> Para incluir otros directorios. De momento no incluimos nada 
-# aquí porque todos los archivos están en la misma ruta.
+CFLAGS      := -Wall -Wextra -Werror -I $(INCLUDE)
+
 AR			:= ar
 ARFLAGS		:= -r -c -s
 
@@ -65,9 +66,21 @@ ARFLAGS		:= -r -c -s
 #                   COMMANDS                     #
 #------------------------------------------------#
 
-
 RM          := rm -f
-MAKEFLAGS   += --no-print-directory
+
+#------------------------------------------------#
+#                     COLORS                     #
+#------------------------------------------------#
+
+DEF_COLOR 	= \033[0;39m
+GRAY 		= \033[0;90m
+RED 		= \033[0;91m
+GREEN 		= \033[0;92m
+YELLOW 		= \033[0;93m
+BLUE 		= \033[0;94m
+MAGENTA		= \033[0;95m
+CYAN 		= \033[0;96m
+WHITE 		= \033[0;97m
 
 #------------------------------------------------#
 #                  EXTRA RULES                   #
@@ -79,25 +92,36 @@ MAKEFLAGS   += --no-print-directory
 # fclean    remove .o + binary
 # re        remake default goal
 
+SRCS		:= $(addprefix $(SRCS_DIR), $(addsuffix .c , $(SRC)))
+OBJS        := $(addprefix $(OBJS_DIR), $(addsuffix .o , $(SRC)))
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
-	$(info CREATED $(NAME))
+	ranlib $(NAME)
+	@echo "$(GREEN)Libft compiled!$(DEF_COLOR)"
 
-%.o: %.c $(INCLUDE)
+$(OBJS_DIR)%.o: $(SRCS_DIR)%.c $(OBJS_DIR)
+	@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
 	$(CC) $(CFLAGS) -c $< -o $@
-	$(info CREATED $@)
+
+$(OBJS_DIR):
+	mkdir -p $(OBJS_DIR)
 
 clean:
-	$(RM) $(OBJS)
+	@$(RM) -r $(OBJS_DIR)
+	@$(RM) $(OBJSF)
+	@echo "$(BLUE)Libft object files cleaned!$(DEF_COLOR)"
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@echo "$(CYAN)libft executable files cleaned!$(DEF_COLOR)"
 
 re:
-	$(MAKE) fclean
-	$(MAKE) all
+	@$(MAKE) fclean
+	@$(MAKE) all
+	@echo "$(GREEN)Cleaned and rebuilt everything for libft!$(DEF_COLOR)"
 
 #------------------------------------------------#
 #                SPECIAL TARGETS                 #
