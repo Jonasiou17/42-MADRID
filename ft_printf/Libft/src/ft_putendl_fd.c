@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_string.c                                     :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdorado- <cdorado-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/06 18:33:12 by cdorado-          #+#    #+#             */
-/*   Updated: 2024/06/06 18:33:12 by cdorado-         ###   ########.fr       */
+/*   Created: 2024/05/05 12:05:17 by cdorado-          #+#    #+#             */
+/*   Updated: 2024/05/05 12:05:17 by cdorado-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_printf.h"
 
-int	print_string(char *string)
+void	ft_putendl_fd(char *s, int fd)
 {
-	ft_putstr_fd(string, 1);
-	return(ft_strlen(string));
+	if (s)
+	{
+		write(fd, s, ft_strlen(s));
+		write(fd, "\n", 1);
+	}
 }
+/*
+int main ()
+{
+	char *s = "Hola mi brou";
+
+	ft_putendl_fd(s, 1);
+}*/

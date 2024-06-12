@@ -1,33 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_int.c                                           :+:      :+:    :+:   */
+/*   ft_striteri.c                                       :+:      :+:    :+:  */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdorado- <cdorado-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 19:19:14 by cdorado-          #+#    #+#             */
-/*   Updated: 2024/06/05 19:19:14 by cdorado-         ###   ########.fr       */
+/*   Created: 2024/05/06 19:25:44 by cdorado-          #+#    #+#             */
+/*   Updated: 2024/05/06 19:25:44 by cdorado-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_printf.h"
 
-static int	counter(int integer)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int	i;
+	int		i;
+	int		len;
 
 	i = 0;
-	while (integer > 0)
+	if (s != NULL && f != NULL)
 	{
-		i++;
-		integer /= 10;
+		len = ft_strlen(s);
+		while (i < len)
+		{
+			(*f)(i, &s[i]);
+			i++;
+		}
 	}
-	return (i);
+}
+/*
+void	ft_putstr( unsigned int i, char *c)
+{
+	while (c[i])
+	{
+		write(1, &c[i], 1);
+		i++;
+	}
 }
 
-int	print_integer(int integer)
+int main()
 {
-	ft_putnbr_fd(integer, 1);
-	return (counter(integer));
-}
+	char *p = "Hello World!";
+	ft_striteri(p, &ft_putstr);
+	printf("%s", p);
+}*/

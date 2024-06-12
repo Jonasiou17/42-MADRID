@@ -34,7 +34,7 @@ static int	print_formats(va_list pa, const char format)
 		len += print_hex_lower(va_arg(pa, unsigned long long));
 	else if (format == 'X')
 		len += print_hex_upper(va_arg(pa, unsigned long long));
-	else if(format == '%')
+	else if (format == '%')
 		len += print_percent();
 	return (len);
 }
@@ -54,7 +54,7 @@ int	ft_printf(char const *format, ...)
 			len += print_character(format[i]);
 		else
 			len += print_formats(pa, format[++i]);
-	i++;
+		i++;
 	}
 	va_end(pa);
 	return (len);
