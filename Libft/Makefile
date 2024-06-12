@@ -102,16 +102,14 @@ $(NAME): $(OBJS)
 	ranlib $(NAME)
 	@echo "$(GREEN)Libft compiled!$(DEF_COLOR)"
 
-$(OBJS_DIR)%.o: $(SRCS_DIR)%.c $(OBJS_DIR)
+$(OBJS_DIR)%.o: $(SRCS_DIR)%.c 
 	@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
+	@mkdir -p $(OBJS_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJS_DIR):
-	mkdir -p $(OBJS_DIR)
 
 clean:
 	@$(RM) -r $(OBJS_DIR)
-	@$(RM) $(OBJSF)
 	@echo "$(BLUE)Libft object files cleaned!$(DEF_COLOR)"
 
 fclean: clean
