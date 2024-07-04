@@ -72,4 +72,14 @@ int main()
 	int prueba11 = ft_printf("%%\n");
 	printf("El valor de retorno de ft_printf es %d\n\n", prueba11);
 
+	//PRUEBA DE UNSIGNED
+	printf("----------PRUEBA DE UNSIGNED----------\n");
+	unsigned int 	a = 2147483900;
+
+	int prueba12 = printf("El valor del unsigned es %u\n", a);
+	printf("El valor de retorno de printf es %u\n\n", prueba12);
+
+	int prueba13 = ft_printf("El valor del unsigned es %u\n", a);
+	printf("El valor de retorno ft_printf es %u\n\n", prueba13);
+
 }

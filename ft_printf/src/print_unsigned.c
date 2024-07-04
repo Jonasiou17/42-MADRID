@@ -13,7 +13,7 @@
 #include "libft.h"
 #include "ft_printf.h"
 
-static int	counter(int integer)
+static int	counter(unsigned int integer)
 {
 	int	i;
 
@@ -26,8 +26,25 @@ static int	counter(int integer)
 	return (i);
 }
 
+void	putnbr_fd(unsigned n, int fd)
+{
+	char	c;
+
+	if (n < 10)
+	{
+		c = n + '0';
+		write(fd, &c, 1);
+	}
+	else
+	{
+		ft_putnbr_fd(n / 10, fd);
+		c = (n % 10) + '0';
+		write(fd, &c, 1);
+	}
+}
+
 int	print_unsigned(unsigned int u_integer)
 {
-	ft_putnbr_fd(u_integer, 1);
+	putnbr_fd(u_integer, 1);
 	return (counter(u_integer));
 }
