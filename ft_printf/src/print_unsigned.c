@@ -26,7 +26,7 @@ static int	counter(unsigned int integer)
 	return (i);
 }
 
-void	putnbr_fd(unsigned n, int fd)
+void	putnbr_fd(unsigned int n, int fd)
 {
 	char	c;
 
@@ -37,7 +37,7 @@ void	putnbr_fd(unsigned n, int fd)
 	}
 	else
 	{
-		ft_putnbr_fd(n / 10, fd);
+		putnbr_fd(n / 10, fd);
 		c = (n % 10) + '0';
 		write(fd, &c, 1);
 	}
