@@ -1,0 +1,13 @@
+OBJETIVO
+
+Programar una función que devuelva una línea leída 
+de un file descriptor.
+
+VARIABLES ESTÁTICAS
+
+FILE DESCRIPTOR
+
+LEER DE STDIN
+
+FLAG -D BUFFER_SIZE=xx
+
