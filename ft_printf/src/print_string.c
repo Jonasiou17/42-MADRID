@@ -16,7 +16,7 @@
 int	print_string(char *string)
 {
 	if (!string)
-		return(write(1, "(null)", 6));
+		return (write(1, "(null)", 6));
 	ft_putstr_fd(string, 1);
 	return (ft_strlen(string));
 }

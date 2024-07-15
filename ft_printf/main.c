@@ -74,7 +74,7 @@ int main()
 
 	//PRUEBA DE UNSIGNED
 	printf("----------PRUEBA DE UNSIGNED----------\n");
-	unsigned int 	a = 2147483900;
+	unsigned int 	a = 0;
 
 	int prueba12 = printf("El valor del unsigned es %u\n", a);
 	printf("El valor de retorno de printf es %u\n\n", prueba12);

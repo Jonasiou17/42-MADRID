@@ -19,7 +19,7 @@ int	print_memory_address(void *ptr)
 
 	len = 0;
 	if (ptr == 0)
-		return(print_string("(nil)"));
+		return (print_string("(nil)"));
 	len += print_string("0x");
 	len += print_hex_lower((unsigned long long)ptr);
 	return (len);
