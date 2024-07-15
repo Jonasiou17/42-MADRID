@@ -6,7 +6,7 @@
 /*   By: cdorado- <cdorado-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 19:29:53 by cdorado-          #+#    #+#             */
-/*   Updated: 2024/06/07 19:29:53 by cdorado-         ###   ########.fr       */
+/*   Updated: 2024/07/15 18:37:09 by cdorado-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ int	print_hex_lower(unsigned long long hex)
 	int		resto;
 	int		i;
 
+	if (hex == 0)
+	{
+		ft_putstr_fd("0\n", 1);
+		return (2);
+	}
 	i = counter(hex);
 	resultado[i--] = '\0';
 	while (hex > 0)

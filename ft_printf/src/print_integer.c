@@ -18,6 +18,13 @@ static int	counter(int integer)
 	int	i;
 
 	i = 0;
+	if (integer < 0)
+	{
+		i++;
+		integer *= -1;
+	}
+	if (integer == 0)
+		return (1);
 	while (integer > 0)
 	{
 		i++;

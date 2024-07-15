@@ -32,6 +32,11 @@ int	print_hex_upper(unsigned long long hex)
 	int		resto;
 	int		i;
 
+	if (hex == 0)
+	{
+		ft_putstr_fd("0\n", 1);
+		return (2);
+	}
 	i = counter(hex);
 	resultado[i--] = '\0';
 	while (hex > 0)

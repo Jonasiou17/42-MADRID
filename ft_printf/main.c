@@ -17,7 +17,7 @@ int main()
 {
 	//PRUEBA DE ENTEROS
 	printf("----------PRUEBA DE ENTEROS----------\n");
-	int 	x = -2147483648;
+	int 	x = 0;
 
 	int prueba = printf("El valor del entero es %d\n", x);
 	printf("El valor de retorno de printf es %d\n\n", prueba);
@@ -29,15 +29,15 @@ int main()
 	printf("----------PRUEBA DE STRINGS----------\n");
 	char	string[] = "amigo mio";
 
-	int prueba2 = printf("El valor de string es: %s\n", string);
+	int prueba2 = printf("El valor de string es: %s\n", NULL);
 	printf("El valor de retorno de printf es %d\n\n", prueba2);
 
-	int prueba3 = ft_printf("El valor de string es: %s\n", string);
+	int prueba3 = ft_printf("El valor de string es: %s\n", NULL);
 	printf("El valor de retorno ft_printf es %d\n\n", prueba3);
 
 	//PRUEBA HEXADECIMAL UPPERCASE
 	printf("----------PRUEBA DE HEXADECIMAL MAYUS----------\n");
-	unsigned int z = 44;;
+	unsigned int z = 0;
 
 	int prueba4 = printf("El valor de %d en hexadecimal es %X\n", z, z);
 	printf("El valor de retorno de printf es %d\n\n", prueba4);
@@ -57,10 +57,10 @@ int main()
 	printf("----------PRUEBA DE DIRECCIONES DE MEMORIA----------\n");
 	char c;
 
-	int prueba8 = printf("La direccion de memoria es %p\n", &c);
+	int prueba8 = printf("La direccion de memoria es %p\n",NULL);
 	printf("El valor de retorno de printf es %d\n\n", prueba8);
 
-	int prueba9 = ft_printf("La direccion de memoria es %p\n", &c);
+	int prueba9 = ft_printf("La direccion de memoria es %p\n", NULL);
 	printf("El valor de retorno de ft_printf es %d\n\n", prueba9);
 	
 	//PRUEBA SIMBOLO %
