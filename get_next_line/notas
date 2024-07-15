@@ -1,9 +1,13 @@
 OBJETIVO
-
 Programar una función que devuelva una línea leída 
 de un file descriptor.
 
 VARIABLES ESTÁTICAS
+Al utilizar statics sobre variables que están dentro de una función, 
+permite que el valor de las mismas persista entre llamadas.
+Al usarlo sobre funciones o variábless de ámbito global, garantiza que 
+dicho elemento (variable o función) solo exista en la unidad de 
+compilación en la que se encuentre declarado.
 
 FILE DESCRIPTOR
 
