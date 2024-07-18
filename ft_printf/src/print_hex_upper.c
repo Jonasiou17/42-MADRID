@@ -34,8 +34,8 @@ int	print_hex_upper(unsigned long long hex)
 
 	if (hex == 0)
 	{
-		ft_putstr_fd("0\n", 1);
-		return (2);
+		ft_putstr_fd("0", 1);
+		return (1);
 	}
 	i = counter(hex);
 	resultado[i--] = '\0';

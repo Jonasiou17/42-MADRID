@@ -29,7 +29,7 @@ int main()
 	printf("----------PRUEBA DE STRINGS----------\n");
 	char	string[] = "amigo mio";
 
-	int prueba2 = printf("El valor de string es: %s\n", NULL);
+	int prueba2 = printf("El valor de string es: %s\n", string);
 	printf("El valor de retorno de printf es %d\n\n", prueba2);
 
 	int prueba3 = ft_printf("El valor de string es: %s\n", NULL);
